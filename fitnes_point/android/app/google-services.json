@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "797717530147",
+    "firebase_url": "https://fitnespoint-f3e8f-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "fitnespoint-f3e8f",
+    "storage_bucket": "fitnespoint-f3e8f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:797717530147:android:cf15c802610a06494f5396",
+        "android_client_info": {
+          "package_name": "com.example.fitnes_point"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwGPygG0j33TwtICZpx-q9tZlCQy72szA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

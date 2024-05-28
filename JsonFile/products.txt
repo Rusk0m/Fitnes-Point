@@ -1,0 +1,644 @@
+{
+  "products": [
+    {
+      "name": "Яблоко",
+      "calories": 52,
+      "protein": 0.3,
+      "fat": 0.2,
+      "carbohydrates": 14,
+      "fiber": 2.4,
+      "sugar": 10.4,
+      "salt": 0.001
+    },
+    {
+      "name": "Куриное филе",
+      "calories": 165,
+      "protein": 31,
+      "fat": 3.6,
+      "carbohydrates": 0,
+      "fiber": 0,
+      "sugar": 0,
+      "salt": 0.07
+    },
+    {
+      "name": "Овсянка",
+      "calories": 68,
+      "protein": 2.5,
+      "fat": 1.4,
+      "carbohydrates": 12,
+      "fiber": 1.7,
+      "sugar": 0,
+      "salt": 0
+    },
+    {
+      "name": "Молоко",
+      "calories": 42,
+      "protein": 3.2,
+      "fat": 1.0,
+      "carbohydrates": 4.8,
+      "fiber": 0,
+      "sugar": 5.0,
+      "salt": 0.13
+    },
+    {
+      "name": "Рис",
+      "calories": 130,
+      "protein": 2.7,
+      "fat": 0.3,
+      "carbohydrates": 28,
+      "fiber": 0.4,
+      "sugar": 0.1,
+      "salt": 0.004
+    },
+    {
+      "name": "Гречка",
+      "calories": 343,
+      "protein": 12.6,
+      "fat": 2.3,
+      "carbohydrates": 62.1,
+      "fiber": 10.0,
+      "sugar": 0.1,
+      "salt": 0.01
+    },
+    {
+      "name": "Мед",
+      "calories": 304,
+      "protein": 0.3,
+      "fat": 0,
+      "carbohydrates": 82.4,
+      "fiber": 0.2,
+      "sugar": 82.1,
+      "salt": 0.004
+    },
+    {
+      "name": "Говядина",
+      "calories": 250,
+      "protein": 25.3,
+      "fat": 16.3,
+      "carbohydrates": 0,
+      "fiber": 0,
+      "sugar": 0,
+      "salt": 0.053
+    },
+    {
+      "name": "Свекла",
+      "calories": 43,
+      "protein": 1.5,
+      "fat": 0.1,
+      "carbohydrates": 10,
+      "fiber": 2.8,
+      "sugar": 9.56,
+      "salt": 0.009
+    },
+    {
+      "name": "Помидор",
+      "calories": 18,
+      "protein": 0.9,
+      "fat": 0.2,
+      "carbohydrates": 3.9,
+      "fiber": 1.2,
+      "sugar": 2.6,
+      "salt": 0.005
+    },
+    {
+      "name": "Банан",
+      "calories": 89,
+      "protein": 1.1,
+      "fat": 0.3,
+      "carbohydrates": 22.8,
+      "fiber": 2.6,
+      "sugar": 12.2,
+      "salt": 0.001
+    },
+    {
+      "name": "Мандарин",
+      "calories": 53,
+      "protein": 0.8,
+      "fat": 0.3,
+      "carbohydrates": 13.3,
+      "fiber": 1.8,
+      "sugar": 9.2,
+      "salt": 0.002
+    },
+    {
+      "name": "Фасоль",
+      "calories": 333,
+      "protein": 23.6,
+      "fat": 1.5,
+      "carbohydrates": 60.3,
+      "fiber": 9.7,
+      "sugar": 2.5,
+      "salt": 0.004
+    },
+    {
+      "name": "Кукуруза",
+      "calories": 86,
+      "protein": 3.2,
+      "fat": 1.3,
+      "carbohydrates": 17.7,
+      "fiber": 2.7,
+      "sugar": 6.3,
+      "salt": 0.002
+    },
+    {
+      "name": "Огурец",
+      "calories": 15,
+      "protein": 0.8,
+      "fat": 0.1,
+      "carbohydrates": 2.8,
+      "fiber": 1.0,
+      "sugar": 1.8,
+      "salt": 0.001
+    },
+    {
+      "name": "Сельдерей",
+      "calories": 16,
+      "protein": 0.7,
+      "fat": 0.2,
+      "carbohydrates": 2.2,
+      "fiber": 1.6,
+      "sugar": 1.6,
+      "salt": 0.005
+    },
+    {
+      "name": "Апельсин",
+      "calories": 43,
+      "protein": 0.9,
+      "fat": 0.1,
+      "carbohydrates": 8.2,
+      "fiber": 2.4,
+      "sugar": 8.2,
+      "salt": 0.001
+    },
+    {
+      "name": "Хлеб",
+      "calories": 266,
+      "protein": 9.4,
+      "fat": 1.9,
+      "carbohydrates": 49,
+      "fiber": 4,
+      "sugar": 2.6,
+      "salt": 0.004
+    },
+    {
+      "name": "Сыр",
+      "calories": 402,
+      "protein": 25,
+      "fat": 33,
+      "carbohydrates": 1.3,
+      "fiber": 0,
+      "sugar": 0.5,
+      "salt": 1.8
+    },
+{
+  "name": "Морковь",
+  "calories": 41,
+  "protein": 0.9,
+  "fat": 0.2,
+  "carbohydrates": 10,
+  "fiber": 2.8,
+  "sugar": 4.7,
+  "salt": 0.004
+},
+{
+  "name": "Картофель",
+  "calories": 77,
+  "protein": 2,
+  "fat": 0.1,
+  "carbohydrates": 17,
+  "fiber": 2.2,
+  "sugar": 1,
+  "salt": 0.002
+},
+{
+  "name": "Грейпфрут",
+  "calories": 33,
+  "protein": 0.7,
+  "fat": 0.2,
+  "carbohydrates": 8.4,
+  "fiber": 1.1,
+  "sugar": 6.9,
+  "salt": 0.001
+},
+{
+  "name": "Мясо кролика",
+  "calories": 173,
+  "protein": 21.8,
+  "fat": 8.2,
+  "carbohydrates": 0,
+  "fiber": 0,
+  "sugar": 0,
+  "salt": 0.07
+},
+{
+  "name": "Кефир",
+  "calories": 51,
+  "protein": 3,
+  "fat": 2,
+  "carbohydrates": 4,
+  "fiber": 0,
+  "sugar": 4,
+  "salt": 0.02
+},
+{
+  "name": "Йогурт",
+  "calories": 59,
+  "protein": 4.3,
+  "fat": 3.3,
+  "carbohydrates": 4.7,
+  "fiber": 0,
+  "sugar": 4.7,
+  "salt": 0.07
+},
+{
+  "name": "Свинина",
+  "calories": 242,
+  "protein": 18.9,
+  "fat": 18.3,
+  "carbohydrates": 0,
+  "fiber": 0,
+  "sugar": 0,
+  "salt": 0.07
+},
+{
+  "name": "Макароны",
+  "calories": 371,
+  "protein": 13.1,
+  "fat": 1.4,
+  "carbohydrates": 75,
+  "fiber": 3.3,
+  "sugar": 3.3,
+  "salt": 0
+},
+{
+  "name": "Печенье",
+  "calories": 486,
+  "protein": 6.5,
+  "fat": 20,
+  "carbohydrates": 69,
+  "fiber": 3,
+  "sugar": 27,
+  "salt": 0.7
+},
+{
+  "name": "Гречневая крупа",
+  "calories": 335,
+  "protein": 12.6,
+  "fat": 3.3,
+  "carbohydrates": 61.5,
+  "fiber": 10,
+  "sugar": 0.1,
+  "salt": 0.02
+},
+{
+  "name": "Капуста",
+  "calories": 27,
+  "protein": 1.8,
+  "fat": 0.1,
+  "carbohydrates": 5.8,
+  "fiber": 2.3,
+  "sugar": 3.2,
+  "salt": 0.002
+},
+{
+  "name": "Кефир",
+  "calories": 51,
+  "protein": 3,
+  "fat": 2,
+  "carbohydrates": 4,
+  "fiber": 0,
+  "sugar": 4,
+  "salt": 0.02
+},
+{
+  "name": "Сметана",
+  "calories": 350,
+  "protein": 2.8,
+  "fat": 34,
+  "carbohydrates": 4,
+  "fiber": 0,
+  "sugar": 4,
+  "salt": 0.01
+},
+{
+  "name": "Мясо индейки",
+  "calories": 111,
+  "protein": 25.8,
+  "fat": 1.5,
+  "carbohydrates": 0,
+  "fiber": 0,
+  "sugar": 0,
+  "salt": 0.04
+},
+{
+  "name": "Брокколи",
+  "calories": 34,
+  "protein": 2.8,
+  "fat": 0.4,
+  "carbohydrates": 6.6,
+  "fiber": 2.6,
+  "sugar": 1.7,
+  "salt": 0.002
+},
+{
+  "name": "Груша",
+  "calories": 42,
+  "protein": 0.4,
+  "fat": 0.3,
+  "carbohydrates": 10.5,
+  "fiber": 1.6,
+  "sugar": 7.4,
+  "salt": 0.001
+},
+{
+  "name": "Лук репчатый",
+  "calories": 40,
+  "protein": 1.1,
+  "fat": 0.1,
+  "carbohydrates": 9.3,
+  "fiber": 1.7,
+  "sugar": 4.7,
+  "salt": 0.002
+},
+{
+  "name": "Красная смородина",
+  "calories": 33,
+  "protein": 1.3,
+  "fat": 0.2,
+  "carbohydrates": 7.4,
+  "fiber": 3.6,
+  "sugar": 4.4,
+  "salt": 0.002
+},
+{
+  "name": "Черная смородина",
+  "calories": 63,
+  "protein": 1.5,
+  "fat": 0.4,
+  "carbohydrates": 14.7,
+  "fiber": 5.7,
+  "sugar": 7.3,
+  "salt": 0.001
+},
+{
+  "name": "Слива",
+  "calories": 46,
+  "protein": 0.7,
+  "fat": 0.3,
+  "carbohydrates": 10.6,
+  "fiber": 1.4,
+  "sugar": 8.1,
+  "salt": 0.001
+},
+{
+  "name": "Черешня",
+  "calories": 50,
+  "protein": 1,
+  "fat": 0.4,
+  "carbohydrates": 11.3,
+  "fiber": 1.6,
+  "sugar": 8.5,
+  "salt": 0.001
+},
+{
+  "name": "Арбуз",
+  "calories": 30,
+  "protein": 0.6,
+  "fat": 0.2,
+  "carbohydrates": 7.5,
+  "fiber": 0.4,
+  "sugar": 6.2,
+  "salt": 0.002
+},
+{
+  "name": "Дыня",
+  "calories": 34,
+  "protein": 0.6,
+  "fat": 0.3,
+  "carbohydrates": 7.7,
+  "fiber": 0.6,
+  "sugar": 6.2,
+  "salt": 0.001
+},
+{
+  "name": "Апельсин",
+  "calories": 43,
+  "protein": 0.9,
+  "fat": 0.1,
+  "carbohydrates": 8.2,
+  "fiber": 2.4,
+  "sugar": 8.2,
+  "salt": 0.001
+},
+{
+  "name": "Лимон",
+  "calories": 29,
+  "protein": 1.1,
+  "fat": 0.3,
+  "carbohydrates": 9.3,
+  "fiber": 2.8,
+  "sugar": 2.5,
+  "salt": 0.001
+},
+{
+  "name": "Киви",
+  "calories": 61,
+  "protein": 1.1,
+  "fat": 0.5,
+  "carbohydrates": 14.7,
+  "fiber": 3,
+  "sugar": 9.1,
+  "salt": 0.001
+},
+{
+  "name": "Виноград",
+  "calories": 69,
+  "protein": 0.6,
+  "fat": 0.2,
+  "carbohydrates": 17.6,
+  "fiber": 0.9,
+  "sugar": 16.3,
+  "salt": 0.002
+},
+{
+  "name": "Апельсин",
+  "calories": 43,
+  "protein": 0.9,
+  "fat": 0.1,
+  "carbohydrates": 8.2,
+  "fiber": 2.4,
+  "sugar": 8.2,
+  "salt": 0.001
+},
+{
+  "name": "Малина",
+  "calories": 52,
+  "protein": 1.3,
+  "fat": 0.7,
+  "carbohydrates": 11.3,
+  "fiber": 6.5,
+  "sugar": 4.2,
+  "salt": 0.001
+},
+{
+  "name": "Клубника",
+  "calories": 32,
+  "protein": 0.8,
+  "fat": 0.4,
+  "carbohydrates": 7,
+  "fiber": 2,
+  "sugar": 4.9,
+  "salt": 0.001
+},
+{
+  "name": "Черника",
+  "calories": 43,
+  "protein": 1.1,
+  "fat": 0.4,
+  "carbohydrates": 7.7,
+  "fiber": 2.6,
+  "sugar": 4.9,
+  "salt": 0.001
+},
+{
+  "name": "Ежевика",
+  "calories": 43,
+  "protein": 1.4,
+  "fat": 0.5,
+  "carbohydrates": 9.6,
+  "fiber": 5.3,
+  "sugar": 4.8,
+  "salt": 0.001
+},
+{
+  "name": "Арбуз",
+  "calories": 30,
+  "protein": 0.6,
+  "fat": 0.2,
+  "carbohydrates": 7.5,
+  "fiber": 0.4,
+  "sugar": 6.2,
+  "salt": 0.002
+},
+{
+  "name": "Абрикос",
+  "calories": 44,
+  "protein": 0.9,
+  "fat": 0.1,
+  "carbohydrates": 9,
+  "fiber": 2,
+  "sugar": 9,
+  "salt": 0.001
+},
+{
+  "name": "Грейпфрут",
+  "calories": 33,
+  "protein": 0.7,
+  "fat": 0.2,
+  "carbohydrates": 8.4,
+  "fiber": 1.1,
+  "sugar": 6.9,
+  "salt": 0.001
+},
+{
+  "name": "Манго",
+  "calories": 60,
+  "protein": 0.8,
+  "fat": 0.4,
+  "carbohydrates": 14.8,
+  "fiber": 1.6,
+  "sugar": 14.8,
+  "salt": 0.001
+},
+{
+  "name": "Кокос",
+  "calories": 354,
+  "protein": 3.3,
+  "fat": 33,
+  "carbohydrates": 15.2,
+  "fiber": 9,
+  "sugar": 6.2,
+"salt": 0.02
+},
+{
+  "name": "Фундук",
+  "calories": 628,
+  "protein": 14.9,
+  "fat": 60.8,
+  "carbohydrates": 16.1,
+  "fiber": 9.7,
+  "sugar": 4.3,
+  "salt": 0.003
+},
+{
+  "name": "Миндаль",
+  "calories": 575,
+  "protein": 21,
+  "fat": 49.4,
+  "carbohydrates": 21.7,
+  "fiber": 12.2,
+  "sugar": 4.2,
+  "salt": 0.003
+},
+{
+  "name": "Кешью",
+  "calories": 553,
+  "protein": 18.2,
+  "fat": 43.9,
+  "carbohydrates": 30.2,
+  "fiber": 3.3,
+  "sugar": 5.9,
+  "salt": 0.005
+},
+{
+  "name": "Грецкий орех",
+  "calories": 654,
+  "protein": 15.2,
+  "fat": 65.2,
+  "carbohydrates": 13.7,
+  "fiber": 6.7,
+  "sugar": 2.6,
+  "salt": 0.002
+},
+{
+  "name": "Фисташки",
+  "calories": 557,
+  "protein": 20.6,
+  "fat": 44.4,
+  "carbohydrates": 27.5,
+  "fiber": 10.3,
+  "sugar": 7.7,
+  "salt": 0.001
+},
+{
+  "name": "Арахис",
+  "calories": 567,
+  "protein": 25.8,
+  "fat": 49.2,
+  "carbohydrates": 16.1,
+  "fiber": 8.5,
+  "sugar": 4.7,
+  "salt": 0.002
+},
+{
+  "name": "Курага",
+  "calories": 237,
+  "protein": 5.2,
+  "fat": 0.6,
+  "carbohydrates": 58.3,
+  "fiber": 6.2,
+  "sugar": 49.4,
+  "salt": 0.002
+},
+{
+  "name": "Изюм",
+  "calories": 299,
+  "protein": 3.1,
+  "fat": 0.5,
+  "carbohydrates": 79.1,
+  "fiber": 4.9,
+  "sugar": 73.2,
+  "salt": 0.003
+}
+]
+}

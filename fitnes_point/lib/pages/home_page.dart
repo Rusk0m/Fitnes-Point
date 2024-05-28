@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
@@ -93,6 +94,9 @@ class _HomePageState extends State<HomePage> {
           MealCard(title: 'Lanch', icon: Icons.sunny,iconColor: Colors.orange,),
           MealCard(title: 'Dinner', icon: Icons.sunny_snowing,iconColor: Colors.pinkAccent,),
           MealCard(title: 'Snack/Other', icon: Icons.fastfood,iconColor: Colors.deepPurpleAccent,),
+
+
+
           const Center(
             child: SizedBox(
               height: 250,
