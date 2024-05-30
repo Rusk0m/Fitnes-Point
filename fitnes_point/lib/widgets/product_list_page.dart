@@ -1,4 +1,3 @@
-import 'package:fitnes_point/widgets/my_search_bar.dart';
 import 'package:fitnes_point/widgets/product_list.dart';
 import 'package:flutter/material.dart';
 

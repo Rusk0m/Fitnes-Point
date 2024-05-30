@@ -2,7 +2,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fitnes_point/widgets/product_list.dart';
 import 'package:fitnes_point/widgets/product_list_page.dart';
 import 'package:flutter/material.dart';
-import 'package:fitnes_point/widgets/my_search_bar.dart';
 import 'package:fitnes_point/functional_classes/products.dart';
 
 class MealCard extends StatefulWidget {

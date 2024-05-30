@@ -65,7 +65,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           //Панель переключения текущего дня
-          DaySwitchPanel(),
+          /*DaySwitchPanel(),
           //Строка общей информации о количестве КБЖУ
           Padding(
             padding: EdgeInsets.all(3.0),
@@ -82,7 +82,7 @@ class _HomePageState extends State<HomePage> {
               child: RowKBGU(),
             ),
           ),
-
+*/
           const Padding(
             padding: EdgeInsets.only(left: 10),
             child: Text(
@@ -117,31 +117,31 @@ class _HomePageState extends State<HomePage> {
                   totalCount: 185,
                 ),
                 PieChartContainer(
-                  edgeInsetsOnly: EdgeInsets.only(left: 10, right: 10),
+                  edgeInsetsOnly: EdgeInsets.symmetric(horizontal: 10),
                   title: 'Fats',
                   count: 35,
                   totalCount: 85,
                 ),
                 PieChartContainer(
-                  edgeInsetsOnly: EdgeInsets.only(left: 5, right: 15),
+                  edgeInsetsOnly: EdgeInsets.symmetric(horizontal: 10),
                   title: 'Carbonates',
                   count: 90,
                   totalCount: 305,
                 ),
                 PieChartContainer(
-                  edgeInsetsOnly: EdgeInsets.only(left: 15, right: 5),
+                  edgeInsetsOnly: EdgeInsets.symmetric(horizontal: 10),
                   title: 'Celuloza',
                   count: 15,
                   totalCount: 25,
                 ),
                 PieChartContainer(
-                  edgeInsetsOnly: EdgeInsets.only(left: 10, right: 10),
+                  edgeInsetsOnly: EdgeInsets.symmetric(horizontal: 10),
                   title: 'Sugar',
                   count: 90,
                   totalCount: 185,
                 ),
                 PieChartContainer(
-                  edgeInsetsOnly: EdgeInsets.only(left: 5, right: 15),
+                  edgeInsetsOnly: EdgeInsets.symmetric(horizontal: 10),
                   title: 'Salt',
                   count: 5,
                   totalCount: 20,
