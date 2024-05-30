@@ -95,8 +95,6 @@ class _HomePageState extends State<HomePage> {
           MealCard(title: 'Dinner', icon: Icons.sunny_snowing,iconColor: Colors.pinkAccent,),
           MealCard(title: 'Snack/Other', icon: Icons.fastfood,iconColor: Colors.deepPurpleAccent,),
 
-
-
           const Center(
             child: SizedBox(
               height: 250,
@@ -104,49 +102,52 @@ class _HomePageState extends State<HomePage> {
               child: KkalPieChar(),
             ),
           ),
-          GridView.count(
-            crossAxisCount: 3,
-            shrinkWrap: true,
-            physics: NeverScrollableScrollPhysics(),
-            childAspectRatio: 0.65,
-            children: const [
-              PieChartContainer(
-                edgeInsetsOnly: EdgeInsets.only(left: 15, right: 5),
-                title: 'Protein',
-                count: 90,
-                totalCount: 185,
-              ),
-              PieChartContainer(
-                edgeInsetsOnly: EdgeInsets.only(left: 10, right: 10),
-                title: 'Fats',
-                count: 35,
-                totalCount: 85,
-              ),
-              PieChartContainer(
-                edgeInsetsOnly: EdgeInsets.only(left: 5, right: 15),
-                title: 'Carbonates',
-                count: 90,
-                totalCount: 305,
-              ),
-              PieChartContainer(
-                edgeInsetsOnly: EdgeInsets.only(left: 15, right: 5),
-                title: 'Celuloza',
-                count: 15,
-                totalCount: 25,
-              ),
-              PieChartContainer(
-                edgeInsetsOnly: EdgeInsets.only(left: 10, right: 10),
-                title: 'Sugar',
-                count: 90,
-                totalCount: 185,
-              ),
-              PieChartContainer(
-                edgeInsetsOnly: EdgeInsets.only(left: 5, right: 15),
-                title: 'Salt',
-                count: 5,
-                totalCount: 20,
-              ),
-            ],
+          Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: GridView.count(
+              crossAxisCount: 3,
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
+              childAspectRatio: 0.65,
+              children: const [
+                PieChartContainer(
+                  edgeInsetsOnly: EdgeInsets.symmetric(horizontal: 10),
+                  title: 'Protein',
+                  count: 90,
+                  totalCount: 185,
+                ),
+                PieChartContainer(
+                  edgeInsetsOnly: EdgeInsets.only(left: 10, right: 10),
+                  title: 'Fats',
+                  count: 35,
+                  totalCount: 85,
+                ),
+                PieChartContainer(
+                  edgeInsetsOnly: EdgeInsets.only(left: 5, right: 15),
+                  title: 'Carbonates',
+                  count: 90,
+                  totalCount: 305,
+                ),
+                PieChartContainer(
+                  edgeInsetsOnly: EdgeInsets.only(left: 15, right: 5),
+                  title: 'Celuloza',
+                  count: 15,
+                  totalCount: 25,
+                ),
+                PieChartContainer(
+                  edgeInsetsOnly: EdgeInsets.only(left: 10, right: 10),
+                  title: 'Sugar',
+                  count: 90,
+                  totalCount: 185,
+                ),
+                PieChartContainer(
+                  edgeInsetsOnly: EdgeInsets.only(left: 5, right: 15),
+                  title: 'Salt',
+                  count: 5,
+                  totalCount: 20,
+                ),
+              ],
+            ),
           )
         ],
       ),

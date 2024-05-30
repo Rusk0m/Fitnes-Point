@@ -13,66 +13,70 @@ class PieChartContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: edgeInsetsOnly,
-      child: SfRadialGauge(
-        axes: [
-          RadialAxis(
-            showLabels: false,
-            showTicks: false,
-            endAngle: 270,
-            startAngle: 270,
-            maximum: totalCount,
-            pointers: <GaugePointer>[
-              RangePointer(
-                value: count,
-                width: 10,
-                color: Colors.blue,
-                enableAnimation: true,
-                animationDuration: 1000,
-                animationType: AnimationType.ease,
-                cornerStyle: CornerStyle.bothCurve,
-              ),
-            ],
-            annotations: [
-              GaugeAnnotation(
-                widget: Padding(
-                  padding: const EdgeInsets.only(top: 10),
-                  child: Container(
-                    child:  Column(
-                      children: [
-                        Text('${count.toStringAsFixed(0)} g'),
-                        Text('${totalCount.toStringAsFixed(0)} g'),
-                      ],
+    return Container(
+      margin: EdgeInsets.symmetric(horizontal: 5,vertical: 5),
+      decoration: BoxDecoration(borderRadius: BorderRadius.circular(20),color: Colors.white),
+      child: Padding(
+        padding: edgeInsetsOnly,
+        child: SfRadialGauge(
+          axes: [
+            RadialAxis(
+              showLabels: false,
+              showTicks: false,
+              endAngle: 270,
+              startAngle: 270,
+              maximum: totalCount,
+              pointers: <GaugePointer>[
+                RangePointer(
+                  value: count,
+                  width: 10,
+                  color: Colors.blue,
+                  enableAnimation: true,
+                  animationDuration: 1000,
+                  animationType: AnimationType.ease,
+                  cornerStyle: CornerStyle.bothCurve,
+                ),
+              ],
+              annotations: [
+                GaugeAnnotation(
+                  widget: Padding(
+                    padding: const EdgeInsets.only(top: 10),
+                    child: Container(
+                      child:  Column(
+                        children: [
+                          Text('${count.toStringAsFixed(0)} g'),
+                          Text('${totalCount.toStringAsFixed(0)} g'),
+                        ],
+                      ),
                     ),
                   ),
+                  angle: 90,
+                  positionFactor: 2.8,
                 ),
-                angle: 90,
-                positionFactor: 2.8,
-              ),
-              GaugeAnnotation(
-                widget: Padding(
-                  padding: const EdgeInsets.only(top: 5),
-                  child: Container(
-                    child: Text(title),
+                GaugeAnnotation(
+                  widget: Padding(
+                    padding: const EdgeInsets.only(top: 5),
+                    child: Container(
+                      child: Text(title),
+                    ),
                   ),
+                  angle: 270,
+                  positionFactor: 1.5,
                 ),
-                angle: 270,
-                positionFactor: 1.5,
-              ),
-              GaugeAnnotation(
-                widget: Padding(
-                  padding: const EdgeInsets.only(top: 5),
-                  child: Container(
-                    child: Text('${(count/totalCount*100).toStringAsFixed(0)}%'),
+                GaugeAnnotation(
+                  widget: Padding(
+                    padding: const EdgeInsets.only(top: 5),
+                    child: Container(
+                      child: Text('${(count/totalCount*100).toStringAsFixed(0)}%'),
+                    ),
                   ),
-                ),
-                angle: 180,
-                positionFactor: 0.0,
-              )
-            ],
-          ),
-        ],
+                  angle: 180,
+                  positionFactor: 0.0,
+                )
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

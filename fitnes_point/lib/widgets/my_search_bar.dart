@@ -1,37 +1,43 @@
+/*
 import 'package:flutter/material.dart';
 
+import '../functional_classes/products.dart';
+
 class MySearchBar extends StatefulWidget {
-  const MySearchBar({super.key});
+  final ValueChanged<String> onChanged;
+
+  MySearchBar({super.key, required this.onChanged});
+
+static List <Product> products = [];
 
   @override
   State<MySearchBar> createState() => _MySearchBarState();
 }
 
 class _MySearchBarState extends State<MySearchBar> {
+  final TextEditingController _searchController = TextEditingController();
 
-  final TextEditingController _controller = new TextEditingController();
+  void _clearTextField() {
+    _searchController.clear();
+    widget.onChanged('');
+  }
 
-  void _clearTextField(){
-    _controller.clear();
+  void _onChanged() {
+    widget.onChanged(_searchController.text);
+  }
+
+  List<Product> display_list = List.from(MySearchBar.products);
+
+  void updateList(String value){
+    setState(() {
+      display_list = MySearchBar.products.where((element) => element.name!.toLowerCase().contains(value.toLowerCase()))
+          .toList();
+    });
   }
 
   @override
   Widget build(BuildContext context) {
-    return  TextField(
-      controller: _controller,
-      decoration: InputDecoration(
-        contentPadding: EdgeInsets.symmetric(vertical: 12),
-        border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(30),
-          borderSide: BorderSide(width: 0.3),
-        ),
-        hintText: 'Search Food',
-        prefixIcon: Icon(Icons.search),
-        suffixIcon: IconButton(
-          icon: Icon(Icons.clear),
-          onPressed: _clearTextField,
-        ),
-      ),
-    );
+    return
   }
 }
+*/
