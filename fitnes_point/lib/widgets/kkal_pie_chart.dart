@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 
 class KkalPieChar extends StatelessWidget {
-  const KkalPieChar({super.key});
+  const KkalPieChar({super.key, required this.totalCalories, required this.eatenCalories});
 
+  final double totalCalories;
+  final int eatenCalories;
   @override
   Widget build(BuildContext context) {
     return SfRadialGauge(
@@ -27,10 +29,12 @@ class KkalPieChar extends StatelessWidget {
               cornerStyle: CornerStyle.bothCurve,
             )
           ],
-          annotations: const [
+          annotations: [
             GaugeAnnotation(
               widget: Column(
-                children: [Text('1488'), Text('3000 kkal')],
+                children: [
+                  Text('${eatenCalories}'),
+                  Text('${totalCalories} kkal')],
               ),
               angle: 90,
               positionFactor: 1,

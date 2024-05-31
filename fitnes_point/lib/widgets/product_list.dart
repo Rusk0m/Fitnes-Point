@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fitnes_point/functional_classes/products.dart';
 
+import '../pages/add_product_page.dart';
 
 class ProductList extends StatefulWidget {
   @override
@@ -12,30 +13,28 @@ class ProductList extends StatefulWidget {
 class _ProductListState extends State<ProductList> {
   @override
   void initState() {
-    getProductStram();
+    getProductStream();
     _searchController.addListener(_onSearchChanged);
     super.initState();
   }
-  
+
   _onSearchChanged(){
     print(_searchController.text);
     searchResultList();
   }
 
-  List products = [];
-  List _resultList = [];
+  List<Product> products = [];
+  List<Product> _resultList = [];
 
   searchResultList(){
-    var showResult = [];
-    if(_searchController.text !=''){
-      for(var clientSnapShot in products){
-        var name = clientSnapShot['name'].toString().toLowerCase();
-        if(name.contains(_searchController.text.toLowerCase())){
-          showResult.add(clientSnapShot);
+    List<Product> showResult = [];
+    if(_searchController.text.isNotEmpty){
+      for(var product in products){
+        if(product.name.toLowerCase().contains(_searchController.text.toLowerCase())){
+          showResult.add(product);
         }
       }
-    }
-    else{
+    } else {
       showResult = List.from(products);
     }
     setState(() {
@@ -43,15 +42,17 @@ class _ProductListState extends State<ProductList> {
     });
   }
 
-  getProductStram() async {
+  getProductStream() async {
     var data = await FirebaseFirestore.instance.collection('product').orderBy('name').get();
+    List<Product> productList = data.docs.map((doc) => Product.fromFirestore(doc)).toList();
 
     setState(() {
-      products = data.docs;
+      products = productList;
     });
     searchResultList();
   }
 
+  @override
   void dispose(){
     _searchController.removeListener(_onSearchChanged);
     _searchController.dispose();
@@ -60,39 +61,29 @@ class _ProductListState extends State<ProductList> {
 
   @override
   void didChangeDependencies() {
-    getProductStram();
+    getProductStream();
     super.didChangeDependencies();
   }
 
   final TextEditingController _searchController = TextEditingController();
-/*
-
-  List<Product> display_list = List.from(products);
-  void updateList(String value) {
-    setState(() {
-      display_list = products
-          .where((element) =>
-              element.name!.toLowerCase().contains(value.toLowerCase()))
-          .toList();
-    });
-  }*/
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        TextField(
-          controller: _searchController,
-              /*onChanged: (value) => updateList(value),*/
-          decoration: InputDecoration(
-            contentPadding: EdgeInsets.symmetric(vertical: 12),
-            border: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(30),
-              borderSide: BorderSide(width: 0.3),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: TextField(
+            controller: _searchController,
+            decoration: InputDecoration(
+              contentPadding: EdgeInsets.symmetric(vertical: 12),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(30),
+                borderSide: BorderSide(width: 0.3),
+              ),
+              hintText: 'Search Food',
+              prefixIcon: Icon(Icons.search),
             ),
-            hintText: 'Search Food',
-            prefixIcon: Icon(Icons.search),
-
           ),
         ),
         Expanded(
@@ -100,9 +91,16 @@ class _ProductListState extends State<ProductList> {
             itemCount: _resultList.length,
             itemBuilder: (BuildContext context, int index) {
               return ListTile(
-                  //key: Key(products[index][name]),
-                  title: Text(_resultList[index]['name']),
-                  //subtitle: Text(products[index].calories.toString()),
+                title: Text(_resultList[index].name),
+                subtitle: Text('${_resultList[index].calories} calories'),
+                onTap: () {
+                  showModalBottomSheet(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return AddProductPage(product: _resultList[index],);
+                    },
+                  );
+                },
               );
             },
           ),

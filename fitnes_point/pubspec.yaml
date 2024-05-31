@@ -43,7 +43,8 @@ dependencies:
   cupertino_icons: ^1.0.6
   firebase_core: ^2.31.1
   firebase_database: ^10.5.6
-  cloud_firestore:
+  cloud_firestore: ^4.17.5
+  flutter_keyboard_visibility:
 dev_dependencies:
   flutter_test:
     sdk: flutter

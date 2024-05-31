@@ -6,6 +6,8 @@ import 'package:flutter/rendering.dart';
 import 'package:flutter/widgets.dart';
 import 'package:fitnes_point/widgets/gradient_image_card.dart';
 
+import '../functional_classes/nutrition.dart';
+import '../functional_classes/user.dart';
 import '../widgets/day_switch_panel.dart';
 import '../widgets/kkal_pie_chart.dart';
 import '../widgets/meall_card.dart';
@@ -20,9 +22,30 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+
+  late Nutrition nutrition;
+  late Map<String, double> results;
+@override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    Nutrition nutrition = Nutrition(
+        user: Person(
+            name: 'Ruskom',
+            age: 18,
+            gender: 'male',
+            height: 175,
+            weight: 75,
+            activityLevel: 'moderate',
+            goal: 'weight loss'
+        )
+    );
+    results = nutrition.calculateNutrition();
+  }
   @override
   Widget build(BuildContext context) {
     return Container(
+
       height: MediaQuery.of(context).size.height,
       child: ListView(
         shrinkWrap: true,
@@ -35,10 +58,10 @@ class _HomePageState extends State<HomePage> {
                 viewportFraction: 0.7, // Установка viewportFraction
               ),
               scrollDirection: Axis.horizontal,
-              children:const  [
+              children: const [
                 Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child:GradientImageCard(
+                  child: GradientImageCard(
                     title: 'Пример текста',
                     image: 'lib/images/9D1A8877.jpg',
                     gradientColor: Colors.cyan,
@@ -46,7 +69,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 Padding(
                   padding: EdgeInsets.all(8.0),
-                  child:GradientImageCard(
+                  child: GradientImageCard(
                     title: 'Пример текста',
                     image: 'lib/images/465a68af7c67d90823f09995e6092675.jpg',
                     gradientColor: CupertinoColors.systemIndigo,
@@ -90,16 +113,32 @@ class _HomePageState extends State<HomePage> {
               style: TextStyle(fontSize: 30),
             ),
           ),
-          MealCard(title: 'Breakfast', icon: Icons.breakfast_dining,iconColor: Colors.amberAccent,),
-          MealCard(title: 'Lanch', icon: Icons.sunny,iconColor: Colors.orange,),
-          MealCard(title: 'Dinner', icon: Icons.sunny_snowing,iconColor: Colors.pinkAccent,),
-          MealCard(title: 'Snack/Other', icon: Icons.fastfood,iconColor: Colors.deepPurpleAccent,),
+          MealCard(
+            title: 'Breakfast',
+            icon: Icons.breakfast_dining,
+            iconColor: Colors.amberAccent,
+          ),
+          MealCard(
+            title: 'Lanch',
+            icon: Icons.sunny,
+            iconColor: Colors.orange,
+          ),
+          MealCard(
+            title: 'Dinner',
+            icon: Icons.sunny_snowing,
+            iconColor: Colors.pinkAccent,
+          ),
+          MealCard(
+            title: 'Snack/Other',
+            icon: Icons.fastfood,
+            iconColor: Colors.deepPurpleAccent,
+          ),
 
-          const Center(
+          Center(
             child: SizedBox(
               height: 250,
               width: 250,
-              child: KkalPieChar(),
+              child: KkalPieChar(totalCalories: double.tryParse(results['calories']!.toStringAsFixed(1)) ??0, eatenCalories: 500 ,),
             ),
           ),
           Padding(
@@ -109,42 +148,43 @@ class _HomePageState extends State<HomePage> {
               shrinkWrap: true,
               physics: NeverScrollableScrollPhysics(),
               childAspectRatio: 0.65,
-              children: const [
+              children:  [
+
                 PieChartContainer(
                   edgeInsetsOnly: EdgeInsets.symmetric(horizontal: 10),
                   title: 'Protein',
                   count: 90,
-                  totalCount: 185,
+                  totalCount:results['protein']??0.0,
                 ),
                 PieChartContainer(
                   edgeInsetsOnly: EdgeInsets.symmetric(horizontal: 10),
                   title: 'Fats',
                   count: 35,
-                  totalCount: 85,
+                  totalCount: results['fat']??0.0,
                 ),
                 PieChartContainer(
                   edgeInsetsOnly: EdgeInsets.symmetric(horizontal: 10),
                   title: 'Carbonates',
                   count: 90,
-                  totalCount: 305,
+                  totalCount: results['carbohydrates']??0.0,
                 ),
                 PieChartContainer(
                   edgeInsetsOnly: EdgeInsets.symmetric(horizontal: 10),
-                  title: 'Celuloza',
+                  title: 'Fiber',
                   count: 15,
-                  totalCount: 25,
+                  totalCount: results['fiber']??0.0,
                 ),
                 PieChartContainer(
                   edgeInsetsOnly: EdgeInsets.symmetric(horizontal: 10),
                   title: 'Sugar',
                   count: 90,
-                  totalCount: 185,
+                  totalCount: results['sugar']??0.0,
                 ),
                 PieChartContainer(
                   edgeInsetsOnly: EdgeInsets.symmetric(horizontal: 10),
                   title: 'Salt',
                   count: 5,
-                  totalCount: 20,
+                  totalCount: results['salt']??0.0,
                 ),
               ],
             ),
