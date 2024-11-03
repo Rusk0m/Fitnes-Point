@@ -16,9 +16,7 @@ class _StatisticPageState extends State<StatisticPage> {
       height: MediaQuery.of(context).size.height,
       child: ListView(
         children: [
-
-
-        ],
+      ],
       ),
     );
   }

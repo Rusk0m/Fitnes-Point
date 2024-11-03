@@ -30,7 +30,7 @@ class PieChartContainer extends StatelessWidget {
                 RangePointer(
                   value: count,
                   width: 10,
-                  color: Colors.blue,
+                  color: Colors.deepPurple,
                   enableAnimation: true,
                   animationDuration: 1000,
                   animationType: AnimationType.ease,
@@ -40,7 +40,7 @@ class PieChartContainer extends StatelessWidget {
               annotations: [
                 GaugeAnnotation(
                   widget: Padding(
-                    padding: const EdgeInsets.only(top: 10),
+                    padding: const EdgeInsets.only(top: 15),
                     child: Container(
                       child:  Column(
                         children: [
@@ -55,7 +55,7 @@ class PieChartContainer extends StatelessWidget {
                 ),
                 GaugeAnnotation(
                   widget: Padding(
-                    padding: const EdgeInsets.only(top: 5),
+                    padding: const EdgeInsets.only(top: 0),
                     child: Container(
                       child: Text(title),
                     ),
@@ -64,12 +64,9 @@ class PieChartContainer extends StatelessWidget {
                   positionFactor: 1.5,
                 ),
                 GaugeAnnotation(
-                  widget: Padding(
-                    padding: const EdgeInsets.only(top: 5),
-                    child: Container(
+                   widget: Container(
                       child: Text('${(count/totalCount*100).toStringAsFixed(0)}%'),
                     ),
-                  ),
                   angle: 180,
                   positionFactor: 0.0,
                 )

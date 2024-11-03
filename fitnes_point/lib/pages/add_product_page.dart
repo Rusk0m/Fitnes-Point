@@ -1,15 +1,15 @@
-import 'package:flutter/cupertino.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_keyboard_visibility/flutter_keyboard_visibility.dart';
 
 import '../functional_classes/products.dart';
 
 class AddProductPage extends StatefulWidget {
-
-  const AddProductPage({super.key, required this.product});
   final Product product;
+  final String userId;
+
+  const AddProductPage({super.key, required this.product, required this.userId});
+
   @override
   State<AddProductPage> createState() => _AddProductPageState();
 }
@@ -21,14 +21,13 @@ class _AddProductPageState extends State<AddProductPage> {
   double _calculatedFatValue = 0;
   double _calculatedCarbohydrateValue = 0;
   double _calculatedCaloriesValue = 0;
-  String? nameProduct;
+
 
   @override
   void initState() {
     super.initState();
     _textController = TextEditingController();
     _textController.addListener(_onTextChanged);
-     nameProduct= widget.product.name.toString();
   }
 
   @override
@@ -38,18 +37,23 @@ class _AddProductPageState extends State<AddProductPage> {
     super.dispose();
   }
 
-  double _calculateValue(double gramm, num macroParametr) {
-    // Замените эту функцию на ваши вычисления
-    return gramm * macroParametr / 100;
-  }
-
   void _onTextChanged() {
     setState(() {
       _inputValue = double.tryParse(_textController.text) ?? 0;
+      _calculatedProteinValue = _calculateValue(_inputValue, double.parse(widget.product.protein.toStringAsFixed(1)));
+      _calculatedFatValue = _calculateValue(_inputValue, double.parse(widget.product.fat.toStringAsFixed(1)));
+      _calculatedCarbohydrateValue = _calculateValue(_inputValue,double.parse(widget.product.carbohydrates.toStringAsFixed(1)));
+      _calculatedCaloriesValue = _calculateValue(_inputValue, double.parse(widget.product.calories.toStringAsFixed(1)));
     });
   }
 
-  void _onSaveButtonPressed() {
+  double _calculateValue(double gramm, double macroParametr) {
+    return gramm * macroParametr / 100;
+  }
+
+  void _onSaveButtonPressed() async {
+    await addEatenProduct(widget.userId, widget.product.name, _inputValue);
+
     setState(() {
       _calculatedProteinValue = _calculateValue(_inputValue, double.parse(widget.product.protein.toStringAsFixed(1)));
       _calculatedFatValue = _calculateValue(_inputValue, double.parse(widget.product.fat.toStringAsFixed(1)));
@@ -58,16 +62,23 @@ class _AddProductPageState extends State<AddProductPage> {
     });
   }
 
+  Future<void> addEatenProduct(String userId, String productName, double weight) async {
+    FirebaseFirestore firestore = FirebaseFirestore.instance;
+
+    // Получаем текущую дату и время
+    DateTime now = DateTime.now();
+
+    // Создаем новый документ в подколлекции `eaten_products` для конкретного пользователя
+    await firestore.collection('user').doc(userId).collection('eaten_products').add({
+      'name': productName,
+      'weight': weight,
+      'date': Timestamp.fromDate(now),
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(
-          'Add ${nameProduct} to my diary',
-          style: TextStyle(fontSize: 30),
-        ),
-        backgroundColor: Colors.deepPurple,
-      ),
       resizeToAvoidBottomInset: true,
       body: KeyboardVisibilityBuilder(
         builder: (context, isKeyboardVisible) {
@@ -75,14 +86,18 @@ class _AddProductPageState extends State<AddProductPage> {
             reverse: isKeyboardVisible,
             child: Padding(
               padding: EdgeInsets.only(
-                bottom: isKeyboardVisible ? MediaQuery.of(context).viewInsets.bottom: 0,
-              ),
+                  bottom: isKeyboardVisible
+                      ? MediaQuery.of(context).viewInsets.bottom
+                      : 0),
               child: Container(
                 color: Colors.white,
                 child: Column(
                   mainAxisSize: MainAxisSize.min,
                   children: [
-
+                    const Text(
+                      'Add product to my diary',
+                      style: TextStyle(fontSize: 30),
+                    ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: TextField(
@@ -111,9 +126,9 @@ class _AddProductPageState extends State<AddProductPage> {
                               vertical: 12.0, horizontal: 60.0),
                         ),
                       ),
-                      child: Text('Update'),
+                      child: Text('Save'),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 15,
                     ),
                     Flexible(
@@ -139,20 +154,18 @@ class _AddProductPageState extends State<AddProductPage> {
                           Container(
                             decoration: BoxDecoration(color: Colors.lightGreen),
                             alignment: Alignment.center,
-                            child: Text('Carbohydrates: $_calculatedCarbohydrateValue'),
+                            child: Text('Carbs: $_calculatedCarbohydrateValue'),
                             margin: EdgeInsets.all(10),
                           ),
                           Container(
                             decoration: BoxDecoration(color: Colors.lightGreen),
                             alignment: Alignment.center,
-                            child: Text('Calories: $_calculatedCaloriesValue'),
+                            child: Text('Fiber: $_calculatedCaloriesValue'),
                             margin: EdgeInsets.all(10),
                           ),
                         ],
                       ),
-                    ),
-                    //TextButton(onPressed: , child: child)
-
+                    )
                   ],
                 ),
               ),

@@ -42,10 +42,21 @@ class _MainPageState extends State<MainPage> {
       body: CustomScrollView(
         slivers: [
           const SliverAppBar(
-            title: Text('Fitnes Point',),
+            title: Text('Fitnes Point',style: TextStyle(color: Colors.white),),
             backgroundColor: Colors.deepPurpleAccent,
-            // pinned: true,
+            centerTitle: true,
+           // shadowColor: Colors.black87,
+            elevation: 120,
 
+            actions: [
+              Padding(
+                padding: EdgeInsets.only(right: 15),
+                child: Icon(Icons.calendar_month,
+                color: Colors.white,
+                ),
+              )
+          ],
+            pinned: true,
             snap: true,
             floating: true,
           ),

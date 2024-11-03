@@ -15,27 +15,29 @@ class _GradientImageCardState extends State<GradientImageCard> {
   @override
   Widget build(BuildContext context) {
     return Stack(children: [
-      Positioned.fill(
-        child: ShaderMask(
-          blendMode:
-          BlendMode.srcATop, // Режим смешивания цветов
-          shaderCallback: (Rect bounds) {
-            return LinearGradient(
-              colors: [
-                Colors.transparent,
-                widget.gradientColor,
-              ], // Цвета градиента
-              begin: Alignment.centerRight,
-              end: Alignment.centerLeft,
-              stops: [0.2,0.6],
-            ).createShader(bounds);
-          },
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(15),
-            child: Image.asset(
-              widget.image,
-              fit: BoxFit.cover,
-            )
+      Container(
+        child: Positioned.fill(
+          child: ShaderMask(
+            blendMode:
+            BlendMode.srcATop, // Режим смешивания цветов
+            shaderCallback: (Rect bounds) {
+              return LinearGradient(
+                colors: [
+                  Colors.transparent,
+                  widget.gradientColor,
+                ], // Цвета градиента
+                begin: Alignment.centerRight,
+                end: Alignment.centerLeft,
+                stops: [0.2,0.6],
+              ).createShader(bounds);
+            },
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(15),
+              child: Image.asset(
+                widget.image,
+                fit: BoxFit.cover,
+              )
+            ),
           ),
         ),
       ),

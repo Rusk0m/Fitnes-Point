@@ -25,6 +25,7 @@ class _MealCardState extends State<MealCard> {
       onTap: () {
         showModalBottomSheet(
           context: context,
+          isScrollControlled: true,
           builder: (BuildContext context) {
             return ProductListPage();
           },

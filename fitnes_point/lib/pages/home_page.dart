@@ -149,7 +149,6 @@ class _HomePageState extends State<HomePage> {
               physics: NeverScrollableScrollPhysics(),
               childAspectRatio: 0.65,
               children:  [
-
                 PieChartContainer(
                   edgeInsetsOnly: EdgeInsets.symmetric(horizontal: 10),
                   title: 'Protein',

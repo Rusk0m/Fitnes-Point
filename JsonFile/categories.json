@@ -1,0 +1,19 @@
+ [
+    {
+      "name": "Headphones",
+      "description": "Audio devices for listening to music, calls, and multimedia, available in wired and wireless options."
+    },
+    {
+      "name": "Laptops",
+      "description": "Portable personal computers designed for work, study, and entertainment."
+    },
+    {
+      "name": "Smartphones",
+      "description": "Mobile phones with advanced features, internet access, and app support."
+    },
+    {
+      "name": "Tablets",
+      "description": "Compact touchscreen devices used for multimedia, reading, work, and gaming."
+    }
+  ]
+

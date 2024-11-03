@@ -97,7 +97,7 @@ class _ProductListState extends State<ProductList> {
                   showModalBottomSheet(
                     context: context,
                     builder: (BuildContext context) {
-                      return AddProductPage(product: _resultList[index],);
+                      return AddProductPage(product: _resultList[index],userId: 'UserId',);
                     },
                   );
                 },
